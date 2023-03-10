@@ -1,6 +1,6 @@
-package com.example.examplemod;
+package cn.evolvefield.mods.example;
 
-import com.example.examplemod.platform.Services;
+import cn.evolvefield.mods.example.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
 

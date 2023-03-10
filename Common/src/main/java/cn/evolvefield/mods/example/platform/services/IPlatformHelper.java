@@ -1,4 +1,4 @@
-package com.example.examplemod.platform.services;
+package cn.evolvefield.mods.example.platform.services;
 
 public interface IPlatformHelper {
 

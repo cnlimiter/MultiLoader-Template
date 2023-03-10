@@ -1,7 +1,11 @@
+plugins{
+    id "java"
+}
+
 subprojects {
-
-    apply plugin: 'java'
-
+    {
+        apply plugin: 'java'
+    }
     java.toolchain.languageVersion = JavaLanguageVersion.of(17)
     java.withSourcesJar()
     java.withJavadocJar()
@@ -40,24 +44,62 @@ subprojects {
             name = 'Sponge / Mixin'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
-
         maven {
             name = 'BlameJared Maven (CrT / Bookshelf)'
             url = 'https://maven.blamejared.com'
         }
+        maven {
+            name = 'ParchmentMC'
+            url = 'https://maven.parchmentmc.org'
+        }
+        maven {
+            name = "Ladysnake"
+            url = "https://ladysnake.jfrog.io/artifactory/mods"
+        }
+        maven {
+            name = "Shedaniel"
+            url = "https://maven.shedaniel.me/"
+        }
+        maven {
+            name = "TerraformersMC"
+            url = "https://maven.terraformersmc.com"
+        }
+        maven {
+            name = "Nucleoid"
+            url = "https://maven.nucleoid.xyz/"
+        }
+        maven {
+            name = "Modrinth"
+            url = "https://api.modrinth.com/maven"
+            content {
+                includeGroup "maven.modrinth"
+            }
+        }
+        maven {
+            name = "Nova"
+            url = "https://maven.nova-committee.cn/releases"
+        }
+        maven {
+            name = "curse"
+            url = "https://www.cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+        maven {
+            url = "https://maven.saps.dev/minecraft"
+            content {
+                includeGroup "dev.latvian.mods"
+                includeGroup "dev.ftb.mods"
+            }
+        }
     }
 
     tasks.withType(JavaCompile).configureEach {
-
         it.options.encoding = 'UTF-8'
         it.options.release = 17
     }
 
-
-    tasks.withType(JavaCompile).configureEach {
-        it.options.encoding = 'UTF-8'
-        it.options.release = 17
-    }
 
     tasks.withType(Javadoc).configureEach {
         options.addStringOption('Xdoclint:none', '-quiet')
@@ -67,7 +109,6 @@ subprojects {
 
     tasks.withType(GenerateModuleMetadata).tap {
         configureEach {
-
             enabled = false
         }
     }

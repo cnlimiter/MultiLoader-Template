@@ -1,7 +1,7 @@
-package com.example.examplemod.platform;
+package cn.evolvefield.mods.example.platform;
 
-import com.example.examplemod.Constants;
-import com.example.examplemod.platform.services.IPlatformHelper;
+import cn.evolvefield.mods.example.Constants;
+import cn.evolvefield.mods.example.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
